@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT ME 61 - Nafil Khautal Budiono</title>
+    <!-- Tailwind CSS untuk styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Memuat Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Latar belakang gradien yang modern */
+            background: linear-gradient(to bottom right, #000000, #111111, #222222);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        /* Menghilangkan panah default dari tag <details> */
+        summary::-webkit-details-marker { display: none; }
+        summary { list-style: none; }
+
+        /* Efek Glassmorphism untuk kartu */
+        .glass-card {
+            background: rgba(220, 21, 21, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.915);
+        }
+
+        /* Animasi dari bawah */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Menerapkan animasi dengan penundaan berbeda untuk efek bertahap */
+        .animate-in {
+            opacity: 0; /* Mulai dari tidak terlihat */
+            animation: fadeInUp 0.7s ease-out forwards;
+        }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        .delay-5 { animation-delay: 1.0s; }
+
+        /* CSS untuk Efek Flip Coin */
+        .flip-container {
+            perspective: 1000px; /* efek 3D */
+        }
+        .flipper {
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+        /* Saat kursor di atas container, putar flipper */
+        .group:hover .flipper {
+            transform: rotateY(180deg);
+        }
+        .front, .back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden; /* Sembunyikan sisi belakang saat tidak terlihat */
+            border-radius: 9999px; /* rounded-full */
+            overflow: hidden; /* Pastikan gambar tetap di dalam lingkaran */
+            border: 4px solid rgba(255, 255, 255, 0.5); /* Border dari desain sebelumnya */
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* shadow-lg */
+        }
+        .back {
+            transform: rotateY(180deg); /* Balik sisi belakang dari awal */
+        }
+
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+
+    <!-- Kontainer utama untuk kartu perkenalan -->
+    <div class="w-full max-w-lg mx-auto rounded-3xl p-8 md:p-10 glass-card">
+        
+        <!-- Foto Diri dengan Efek Flip -->
+        <figure class="mb-6 animate-in delay-1 group"> <!-- Tambahkan 'group' di sini -->
+            <div class="flip-container w-32 h-32 md:w-40 md:h-40 mx-auto">
+                <div class="flipper w-full h-full">
+                    <div class="front">
+                        <!-- Sisi Depan: Foto Anda -->
+                        <img src="C:\1. NAFIL CAMPUS NEEDS\Semester 3\z. Pekan Ilkomerz\istockphoto-479629586-612x612.jpg" alt="Foto Ayubi Fathan" class="w-full h-full object-cover">
+                    </div>
+                    <div class="back">
+                        <!-- Sisi Belakang: Foto baru -->
+                        <img src="C:\1. NAFIL CAMPUS NEEDS\Semester 3\z. Pekan Ilkomerz\20250820_210843.jpg" alt="Stressed" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+            <!-- Caption yang bisa berganti dengan efek fade -->
+            <figcaption class="relative text-center text-sm text-white/70 mt-4 italic h-5">
+                <span class="absolute inset-0 transition-opacity duration-500 ease-in-out group-hover:opacity-0">
+                    "Welcome to my page ('--')"
+                </span>
+                <span class="absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">
+                    "This is me"
+                </span>
+            </figcaption>
+        </figure>
+
+        <!-- Judul Kartu -->
+        <div class="text-center animate-in delay-2">
+            <h1 class="text-4xl font-bold text-white mb-1">Nafil Khautal Budiono</h1>
+            <p class="text-white/80 mb-1">Tech and software enthusiast</p>
+            <p class="text-white/80 mb-6">Undergraduate Computer Science at IPB University</p>
+        </div>
+
+
+        <!-- Daftar Informasi Diri -->
+        <div class="space-y-5 animate-in delay-3">
+            <!-- Interaktif: Nama -->
+            <div class="flex items-start">
+                <div class="flex-shrink-0 w-8 h-8 bg-white/10 text-white rounded-full flex items-center justify-center">
+                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" /></svg>
+                </div>
+                <div class="ml-4 w-full">
+                    <p class="text-sm font-medium text-white/60">Name</p>
+                     <details class="group">
+                        <summary class="flex justify-between items-center cursor-pointer list-none">
+                            <span class="text-lg font-semibold text-white">Nafil Khautal Budiono</span>
+                            <svg class="w-5 h-5 text-white/70 transform transition-transform duration-300 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </summary>
+                        <div class="mt-3 pt-3 border-t border-white/20 space-y-2 text-sm text-white/90">
+                            <p><strong class="font-medium text-white/60">Nickname:</strong> dipanggil fil nengok</p>
+                            <p><strong class="font-medium text-white/60">Origin:</strong> Bogor City</p>
+                            <p><strong class="font-medium text-white/60">Birth date:</strong> October 7th, 2005</p>
+                            <p><strong class="font-medium text-white/60">Hobby:</strong> Eat-sleep repeat</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Item: NIM -->
+            <div class="flex items-start">
+                <div class="flex-shrink-0 w-8 h-8 bg-white/10 text-white rounded-full flex items-center justify-center">
+                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 2.5l7.997 3.384A1 1 0 0119 6.81V17a1 1 0 01-1 1H2a1 1 0 01-1-1V6.81a1 1 0 011.003-.926zM12 11a2 2 0 100-4 2 2 0 000 4z" /><path d="M4 11a2 2 0 100 4h12a2 2 0 100-4H4z" /></svg>
+                </div>
+                <div class="ml-4">
+                    <p class="text-sm font-medium text-white/60">Student ID</p>
+                    <p class="text-lg font-semibold text-white">M-102</p>
+                </div>
+            </div>
+
+            <!-- Item: Program Studi -->
+            <div class="flex items-start">
+                <div class="flex-shrink-0 w-8 h-8 bg-white/10 text-white rounded-full flex items-center justify-center">
+                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 16c1.255 0 2.443-.29 3.5-.804V4.804zM14.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 0114.5 16c1.255 0 2.443-.29 3.5-.804v-10A7.968 7.968 0 0014.5 4z" /></svg>
+                </div>
+                <div class="ml-4">
+                    <p class="text-sm font-medium text-white/60">Major</p>
+                    <p class="text-lg font-semibold text-white">Computer Science</p>
+                </div>
+            </div>
+            
+            <!-- Interaktif: Nama Proxy -->
+            <div class="flex items-start">
+                <div class="flex-shrink-0 w-8 h-8 bg-white/10 text-white rounded-full flex items-center justify-center">
+                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zM2 10a8 8 0 1116 0 8 8 0 01-16 0zm4.879-2.121a1 1 0 10-1.414 1.414l2.5 2.5a1 1 0 001.414 0l4-4a1 1 0 10-1.414-1.414L9 10.586l-2.121-2.121z" clip-rule="evenodd" /></svg>
+                </div>
+                <div class="ml-4 w-full">
+                    <p class="text-sm font-medium text-white/60">Proxy</p>
+                    <details class="group">
+                        <summary class="flex justify-between items-center cursor-pointer list-none">
+                            <span class="text-lg font-semibold text-white">Gauss</span>
+                            <svg class="w-5 h-5 text-white/70 transform transition-transform duration-300 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </summary>
+                        <div class="mt-3 pt-3 border-t border-white/20">
+                            <p class="text-sm text-white/80 leading-relaxed">
+                                <strong>Carl Friedrich Gauss (1777 - 1855)</strong> was a German mathematician who made significant contributions to geometry, number theory, function theory, and probability theory. He discovered a way to calculate the trajectories of asteroids, made fundamental discoveries in potential theory (electromagnetic fields), and was the first to use the telegraph (1833). Because of these contributions, he was nicknamed the "Prince of Mathematics."
+                            </p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+
+        <!-- Garis Pemisah -->
+        <div class="border-t border-white/20 my-8 animate-in delay-4"></div>
+
+        <!-- Bagian Sosial Media -->
+        <div class="text-center animate-in delay-5">
+            <p class="text-sm font-medium text-white/80 mb-4">LET'S CONNECT!</p>
+            <div class="flex items-center justify-center space-x-6">
+                <!-- Link profil sudah diperbarui -->
+                <a href="https://github.com/nafilok" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-white transition-colors duration-300">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.838 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
+                    <span class="sr-only">GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/nafil-khautal-budiono-697532318/" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-white transition-colors duration-300">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" /></svg>
+                    <span class="sr-only">LinkedIn</span>
+                </a>
+                 <a href="https://instagram.com/nafil_khautal" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-white transition-colors duration-300">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218 1.791.465 2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427.465C9.793 2.013 10.147 2 12.315 2zm-1.161 1.545c-2.43.0-2.766.013-3.729.06-1.002.046-1.503.21-1.86.363a3.31 3.31 0 00-1.253.82 3.31 3.31 0 00-.82 1.253c-.153.357-.317.858-.363 1.86-.046.963-.06 1.299-.06 3.729s.013 2.766.06 3.729c.046 1.002.21 1.503.363 1.86a3.31 3.31 0 00.82 1.253 3.31 3.31 0 001.253.82c.357.153.858.317 1.86.363.963.046 1.299.06 3.729.06s2.766-.013 3.729-.06c1.002-.046 1.503-.21 1.86-.363a3.31 3.31 0 001.253-.82 3.31 3.31 0 00.82-1.253c.153-.357.317-.858-.363-1.86.046-.963.06-1.299.06-3.729s-.013-2.766-.06-3.729c-.046-1.002-.21-1.503-.363-1.86a3.31 3.31 0 00-.82-1.253 3.31 3.31 0 00-1.253-.82c-.357-.153-.858-.317-1.86-.363-.963-.046-1.299-.06-3.729-.06zM12 8.438a3.563 3.563 0 100 7.125 3.563 3.563 0 000-7.125zM12 14a2 2 0 110-4 2 2 0 010 4zm5.85-6.837a1.237 1.237 0 100-2.475 1.237 1.237 0 000 2.475z" clip-rule="evenodd" /></svg>
+                    <span class="sr-only">Instagram</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
